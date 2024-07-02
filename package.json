@@ -1,0 +1,30 @@
+{
+  "name": "bun-sentry-repro",
+  "version": "0.1.0",
+  "module": "src/server.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint && tsc",
+    "compile:docker:sandbox": "cd ../.. && docker build -f Dockerfile.sandbox -t ghcr.io/nzapponi/dctr-backend-sbox:$(git rev-parse --short HEAD) -t ghcr.io/nzapponi/dctr-backend-sbox:latest .",
+    "dev": "bun run --hot src/server.ts",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@sentry/bun": "^8.13.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0"
+  }
+}
