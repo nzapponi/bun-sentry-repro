@@ -4,10 +4,7 @@
   "module": "src/server.ts",
   "type": "module",
   "scripts": {
-    "lint": "eslint && tsc",
-    "compile:docker:sandbox": "cd ../.. && docker build -f Dockerfile.sandbox -t ghcr.io/nzapponi/dctr-backend-sbox:$(git rev-parse --short HEAD) -t ghcr.io/nzapponi/dctr-backend-sbox:latest .",
-    "dev": "bun run --hot src/server.ts",
-    "clean": "rm -rf dist"
+    "start": "bun run src/server.ts"
   },
   "devDependencies": {
     "@types/compression": "^1.7.5",
